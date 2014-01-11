@@ -694,7 +694,7 @@ dt {
   font-weight: normal;
 }
 
-#header {
+.header {
   z-index: 100;
   left: 0;
   top: 0px;
@@ -708,14 +708,14 @@ dt {
   -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 }
-#header nav {
+.header nav {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 10px;
   background: blue;
   margin: 6px auto;
 }
-#header nav li {
+.header nav li {
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   list-style: none;
@@ -725,7 +725,7 @@ dt {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
   font-size: 14px;
 }
-#header nav li a {
+.header nav li a {
   color: white;
   border: 1px solid #5d910b;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #93bd20), color-stop(100%, #659e10));
@@ -752,7 +752,7 @@ dt {
   display: inline-block;
   text-align: center;
 }
-#header nav li a:hover {
+.header nav li a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #749619), color-stop(100%, #527f0e));
   background: -webkit-linear-gradient(#749619, #527f0e);
   background: -moz-linear-gradient(#749619, #527f0e);
@@ -766,15 +766,15 @@ dt {
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
 }
-#header nav li.fork {
+.header nav li.fork {
   float: left;
   margin-left: 0px;
 }
-#header nav li.downloads {
+.header nav li.downloads {
   float: right;
   margin-left: 6px;
 }
-#header nav li.title {
+.header nav li.title {
   float: right;
   margin-right: 10px;
   font-size: 11px;
