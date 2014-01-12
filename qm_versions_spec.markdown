@@ -72,8 +72,8 @@ group | Don't download or install anything, except dependencies.
 ## Depends vs. Recommends vs. Suggests
 </a>
 
-It may be hard to see the difference between recommends and suggests, partly because it's may be very subjective.
-Example: MFR recommends Buildcraft for powergeneration, while Railcraft only suggests it, as Railcraft has it's own powergeneration
+It may be hard to see the difference between depends, recommends and suggests, partly because it's may be very subjective.
+Example: MFR recommends Buildcraft for powergeneration, while Railcraft only suggests it, as Railcraft has it's own powergeneration, and AdditionalBuildcraftObjects depends on it
 
 <a id="note_versions">
 ## A few notes on version naming
@@ -114,7 +114,7 @@ function lessThan(string v1, string v2)
   return false
 ```
 
-This means that subparts at which both versions can be converted to an integer are compared like integers (leading zeros discarded etc.), while if at least one of them cannot be converted to an integer they are compared according to the string comparison of the language in question.
+This means that subparts at which both versions can be converted to an integer are compared like integers (leading zeros discarded etc.), while if at least one of them cannot be converted to an integer they are compared according to the string comparison of the language in question, meaning 1.10a might be less than 1.9a.
 This string comparison will of course differ between languages, but as long as a4b is greater than b3a, a3a and a4a you should be good to go.
 
 ## Example
