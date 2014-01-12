@@ -21,20 +21,59 @@ Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
 mcCompatibility | stringlist | yes | A list of all Minecraft versions supported by this version
 forgeCompatibility | interval\* | no | An interval of all forge versions supported
-depends | object\*\* | no | A list of all mods this mod version has a strong dependency on
-recommends | object\*\* | no | A list of all mods this mod version works well with, but that are not necessary for it to run
-suggests | object\*\* | no | Like `recommends`, but even less strong
+depends | object\*\* | no | Mods that are strictly necessary. See [below](#note_recommends)
+recommends | object\*\* | no | Mods that are not strictly necessary. See [below](#note_recommends)
+suggests | object\*\* | no | Like`recommends`but weaker. See [below](#note_recommends)
 breaks | object\*\* | no | A list of all mods that this mod version breaks in some way, like crashes etc.
 conflicts | object\*\* | no | A list of all mods that this mod version conflicts with, meaning it might not crash but there might be other unpleasent surprises.
 provides | object\*\* | no | A list of all mods that this mod provides, meaning they shouldn't be installed side-by-side (Opis provides MapWriter, for example)
-name | string | yes | A name for this version. Good if it matches the regular expression \d+(\.\d+)* (1.2, 4.5.2.3.2.4 etc.). See also [below](#note_versions)
-downloadType | enum | no | The way this URL should be treated. If the value is `direct` the URL is followed directly and without showing anything to the user. `parallel` will start loading it in browsers together with all other `parallel` URLs. All `sequential` URLs will be loaded one-by-one, which is required by adfly etc. The default is `parallel`.
-installType | enum | no | The way the received file should be treated. `forgeMod` is the default and means put into <minecraft>/mods/, `forgeCoreMod` means put into <minecraft>/coremods/, `configPack` means extract with <minecraft> as root. There is also `group` which means that nothing should be downloaded or installed for this version (except dependencies). Useful if there's an "umbrella" QuickMod file that will download all submods
-url | url | yes | Not required if `installType` is `group`. This is the URL that will be followed for this version.
+name | string | yes | A name for this version. See [below](#note_versions)
+downloadType | enum | no | See [below](#downloadtype)
+installType | enum | no | See [below](#installtype)
+url | url | yes | This is the URL that will be followed for this version. Not required if`installType`is`group`
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
 
 \*\* uid -> version interval mapping.
+
+<a id="downloadtype">
+## Download Type
+</a>
+
+Possible values of the`downloadType`field:
+
+Value | Description
+----- | -----------
+direct | Don't display a browser, just download the URL directly
+parallel | Loaded at the same time as all other`parallel` URLs
+sequential | Loaded one-by-one, needed by adfly or similar URLs
+
+`parallel`is the default.
+
+<a id="installtype">
+## Install Type
+</a>
+
+Possible values of the`installType`field:
+
+Value | Description
+----- | -----------
+forgeMod | Put into`<minecraft>/mods/`
+forgeCoreMod | Put into`<minecraft>/coremods/`
+extract | Extract at`<minecraft>`
+configPack | Extract at`<minecraft>/configs`
+group | Don't download or install anything, except dependencies.
+
+`forgeMod`is the default.
+
+`group`is useful for "umbrella" mods. Example: ProjectRed does not contain any files, it just depends on the ProjectRed-* mods.
+
+<a id="note_recommends">
+## Depends vs. Recommends vs. Suggests
+</a>
+
+It may be hard to see the difference between recommends and suggests, partly because it's may be very subjective.
+Example: MFR recommends Buildcraft for powergeneration, while Railcraft only suggests it, as Railcraft has it's own powergeneration
 
 <a id="note_versions">
 ## A few notes on version naming
