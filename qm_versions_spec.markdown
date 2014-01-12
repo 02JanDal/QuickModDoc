@@ -41,6 +41,7 @@ url | url | yes | Not required if `installType` is `group`. This is the URL that
 </a>
 
 Psuedocode for how versions are compared:
+
 ```
 function lessThan(string v1, string v2)
   stringlist parts1 = split v1 at '.'
