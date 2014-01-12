@@ -31,7 +31,7 @@ websiteUrl   | qmurl\*\*      | no        | A URL to the mods website
 issuesUrl    | qmurl\*\*      | no        | A URL to an issue tracker for the mod
 donationsUrl | qmurl\*\*      | no        | A URL for leaving donations to the mod
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
-versionsUrl  | qmurl\*\*      | yes       | This URL should point at a [QuickMod Versions](qm_version_spec.html) file
+versionsUrl  | qmurl\*\*      | yes       | This URL should point at a [QuickMod Versions](qm_versions_spec.html) file
 verifyUrl    | qmurl\*\*      | no        | This URL should point at a UTF-8 encoded file containing only a SHA512 checksum of this QuickMod file. If that checksum is correct the user will be given a nice message
 tags         | stringlist     | no        | A list of tags that apply to the mod
 categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
