@@ -46,8 +46,9 @@ references   | object\*\*\*\* | no        | A list of all mods that are in some 
 
 \*\*\*\* A string -> qmurl map, where the key is the uid of the referenced mod, and the value should be the same as the updateUrl of that mod
 
+<a id="qmurl">
 ## QuickMod URLs
-
+</a>
 All URLs that are referencing something 'inside' the QuickMod system, like other QuickMod files, version files etc. can make use of a few additional schemes (a part from the standard http, https etc.).
 These mostly exist for convenience and to reduce bandwidth usage.
 
