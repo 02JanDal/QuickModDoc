@@ -15,3 +15,6 @@ These QuickMod files can be given to a Minecraft launcher, for example MultiMC 5
 
 No problem, all download links are displayed in a browser and then caught once the file download is started
 
+## How does it work?
+
+![Flowchart](images/QuickModFlowchart.png)
