@@ -5,8 +5,6 @@ title: The QuickMod Index file syntax
 
 # The QuickMod Index file syntax
 
-Index files can be used by bigger repositories to give hints about all links in that repository
-
 ## File type
 
 JSON file
