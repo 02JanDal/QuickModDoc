@@ -115,7 +115,6 @@ function lessThan(string v1, string v2)
 ```
 
 This means that subparts at which both versions can be converted to an integer are compared like integers (leading zeros discarded etc.), while if at least one of them cannot be converted to an integer they are compared according to the string comparison of the language in question, meaning 1.10a might be less than 1.9a.
-This string comparison will of course differ between languages, but as long as a4b is greater than b3a, a3a and a4a you should be good to go.
 
 ## Example
 
