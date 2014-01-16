@@ -19,8 +19,8 @@ The QuickMod Version file contains a JSON array of objects, here is a list of al
 
 Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
-mcCompatibility | stringlist | yes | A list of all Minecraft versions supported by this version
-forgeCompatibility | interval\* | no | An interval of all forge versions supported
+mcCompat | stringlist | yes | A list of all Minecraft versions supported by this version
+forgeCompat | interval\* | no | An interval of all forge versions supported
 depends | object\*\* | no | Mods that are strictly necessary. See [below](#note_recommends)
 recommends | object\*\* | no | Mods that are not strictly necessary. See [below](#note_recommends)
 suggests | object\*\* | no | Like`recommends`but weaker. See [below](#note_recommends)
@@ -121,7 +121,7 @@ This means that subparts at which both versions can be converted to an integer a
 ```json
 [
     {
-        "mcCompatibility": [ "1.6.4" ],
+        "mcCompat": [ "1.6.4" ],
         "depends": {
             "codechicken.ForgeMultipart": "[1.0.0.228,)"
         },
