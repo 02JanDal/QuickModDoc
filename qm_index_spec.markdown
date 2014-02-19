@@ -15,8 +15,8 @@ Always `index.json`
 
 # Contents
 
-A QuickMod Index file should contain a JSON object with the field `isIndex` set to true. All QuickMod files contained in the repository should then be listed in the JSON object, with the UID as key and a [qmurl](qm_spec.html#qmurl) pointing at the QuickMod file.
-If a field with the key `baseUrl` exists all relative URLs are resolved with that as base.
+A QuickMod Index file should contain a JSON object with the field `index` with an array as value. All QuickMod files contained in the repository should then be listed in the JSON array, one object each, with a 'uid' field and a 'url' field ([qmurl](qm_spec.html#qmurl) pointing at the QuickMod file).
+If a field with the key `baseUrl` exists all relative URLs are resolved with that as base, or if it contains "{}" that is replaced by each items url.
 
 # Usage
 
