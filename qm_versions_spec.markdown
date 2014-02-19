@@ -25,6 +25,7 @@ references | objectlist\*\* | no | A list of all dependencies, conflicts etc. et
 name | string | yes | A name for this version. See [below](#note_versions)
 downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
+checksum_md5 | string | no | The checksum of the downloaded file
 url | url | yes | This is the URL that will be followed for this version. Not required if`installType`is`group`
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
