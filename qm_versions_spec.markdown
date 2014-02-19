@@ -29,7 +29,7 @@ url | url | yes | This is the URL that will be followed for this version. Not re
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
 
-\*\* an array of objects, where each object has the field 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'breaks', 'conflicts', 'provides', and version can be either empty or a version interval.
+\*\* an array of objects, where each object has the field 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'conflicts', 'provides', and version can be either empty or a version interval.
 
 <a id="downloadtype">
 ## Download Type
