@@ -15,18 +15,13 @@ Add .versions infront of the file ending of the QuickMod file (<name>.json -> <n
 
 # The fields
 
-The QuickMod Version file contains a JSON array of objects, here is a list of all the fields currently defined for the object:
+The QuickMod Version file contains a JSON object of objects, here is a list of all the fields currently defined for the object:
 
 Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
 mcCompat | stringlist | yes | A list of all Minecraft versions supported by this version
 forgeCompat | interval\* | no | An interval of all forge versions supported
-depends | object\*\* | no | Mods that are strictly necessary. See [below](#note_recommends)
-recommends | object\*\* | no | Mods that are not strictly necessary. See [below](#note_recommends)
-suggests | object\*\* | no | Like`recommends`but weaker. See [below](#note_recommends)
-breaks | object\*\* | no | A list of all mods that this mod version breaks in some way, like crashes etc.
-conflicts | object\*\* | no | A list of all mods that this mod version conflicts with, meaning it might not crash but there might be other unpleasent surprises.
-provides | object\*\* | no | A list of all mods that this mod provides, meaning they shouldn't be installed side-by-side (Opis provides MapWriter, for example)
+references | objectlist\*\* | no | A list of all dependencies, conflicts etc. etc.
 name | string | yes | A name for this version. See [below](#note_versions)
 downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
@@ -34,7 +29,7 @@ url | url | yes | This is the URL that will be followed for this version. Not re
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
 
-\*\* uid -> version interval mapping.
+\*\* an array of objects, where each object has the field 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'breaks', 'conflicts', 'provides', and version can be either empty or a version interval.
 
 <a id="downloadtype">
 ## Download Type
