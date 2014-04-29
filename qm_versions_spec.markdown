@@ -1,21 +1,11 @@
 ---
 layout: index
-title: The QuickMod Version file syntax
+title: The QuickMod Version object syntax
 ---
 
-# The QuickMod Version file syntax
+# The QuickMod Version object syntax
 
-## File type
-
-JSON file
-
-## File ending
-
-Add .versions infront of the file ending of the QuickMod file (<name>.json -> <name>.versions.json and <name>.quickmod -> <name>.versions.quickmod)
-
-# The fields
-
-The QuickMod Version file contains a JSON object of objects, here is a list of all the fields currently defined for the object:
+The QuickMod Version objects can contain the following fields:
 
 Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
@@ -23,6 +13,7 @@ mcCompat | stringlist | yes | A list of all Minecraft versions supported by this
 forgeCompat | interval\* | no | An interval of all forge versions supported
 references | objectlist\*\* | no | A list of all dependencies, conflicts etc. etc.
 name | string | yes | A name for this version. See [below](#note_versions)
+type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
 downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
 md5 | string | no | The checksum of the downloaded file
@@ -69,7 +60,7 @@ group | Don't download or install anything, except dependencies.
 </a>
 
 It may be hard to see the difference between depends, recommends and suggests, partly because it's may be very subjective.
-Example: MFR recommends Buildcraft for powergeneration, while Railcraft only suggests it, as Railcraft has it's own powergeneration, and AdditionalBuildcraftObjects depends on it
+Example: MFR recommends Buildcraft for power generation, while Railcraft only suggests it, as Railcraft has it's own power generation, and AdditionalBuildcraftObjects depends on it
 
 <a id="note_versions">
 ## A few notes on version naming
@@ -112,21 +103,6 @@ function lessThan(string v1, string v2)
 
 This means that subparts at which both versions can be converted to an integer are compared like integers (leading zeros discarded etc.), while if at least one of them cannot be converted to an integer they are compared according to the string comparison of the language in question, meaning 1.10a might be less than 1.9a.
 
-## Example
+# Example
 
-```json
-[
-    {
-        "mcCompat": [ "1.6.4" ],
-        "depends": {
-            "codechicken.ForgeMultipart": "[1.0.0.228,)"
-        },
-        "name": "1.2.1.434",
-        "downloadType": "sequential",
-        "installType": "forgeMod",
-        "url": "http://adf.ly/391097/http://files.minecraftforge.net/BiomesOPlenty/BiomesOPlenty-universal-1.6.4-1.2.1.434.jar"
-    }
-]
-```
-
-See the [QuickMod](qm_spec.html) spec for an example of a matching QuickMod file.
+See the [QuickMod](qm_spec.html) spec for an example.

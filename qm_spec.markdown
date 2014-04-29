@@ -31,12 +31,12 @@ websiteUrl   | qmurl\*\*      | no        | A URL to the mods website
 issuesUrl    | qmurl\*\*      | no        | A URL to an issue tracker for the mod
 donationsUrl | qmurl\*\*      | no        | A URL for leaving donations to the mod
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
-versionsUrl  | qmurl\*\*      | yes       | This URL should point at a [QuickMod Versions](qm_versions_spec.html) file
 verifyUrl    | qmurl\*\*      | no        | This URL should point at a UTF-8 encoded file containing only a SHA512 checksum of this QuickMod file. If that checksum is correct the user will be given a nice message
 tags         | stringlist     | no        | A list of tags that apply to the mod
 categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
 authors      | object\*\*\*   | no        | Authors that have participated in the creation of the mod
 references   | object\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
+versions     | array          | yes       | A list of versions, see [here](qm_versions_spec.markdown) for documentation.
 
 \* Only if it's a forge mod
 
@@ -85,8 +85,18 @@ Note: Most URLs etc in the below example won't work
     },
     "references": {
         "codechicken.ForgeMultipart": "github://Chicken-Bones@ForgeMultipart/FMP.json"
-    }
+    },
+    "versions": [
+        {
+            "mcCompat": [ "1.6.4" ],
+            "depends": {
+                "codechicken.ForgeMultipart": "[1.0.0.228,)"
+            },
+            "name": "1.2.1.434",
+            "downloadType": "sequential",
+            "installType": "forgeMod",
+            "url": "http://adf.ly/391097/http://files.minecraftforge.net/BiomesOPlenty/BiomesOPlenty-universal-1.6.4-1.2.1.434.jar"
+        }
+    ]
 }
 ```
-
-See the [QuickMod Versions](qm_versions_spec.html) spec for an example of a matching versions file.
