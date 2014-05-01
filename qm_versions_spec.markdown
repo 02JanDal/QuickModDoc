@@ -18,10 +18,13 @@ downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
 md5 | string | no | The checksum of the downloaded file
 url | url | yes | This is the URL that will be followed for this version. Not required if`installType`is`group`
+libraries | objectlist\*\*\* | no | A list of libraries required by the mod version
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
 
-\*\* an array of objects, where each object has the field 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'conflicts', 'provides', and version can be either empty or a version interval.
+\*\* an array of objects, where each object has the fields 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'conflicts', 'provides', and version can be either empty or a version interval.
+
+\*\* an array of objects, where each object has the fields 'name' and 'url'. The 'name' should be in the format `<group>:<artifact>:<version>`, 'url' can either be a maven base URL (has to end with a forward slash), an absolute URL (cannot end with a forward slash) or be empty or not existing (uses the maven central repository)
 
 <a id="downloadtype">
 ## Download Type
