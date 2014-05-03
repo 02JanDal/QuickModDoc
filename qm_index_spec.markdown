@@ -15,8 +15,7 @@ If the 'index' property exists, the QuickMod file is an index.
 ## Contents
 An object with the following properties:
 
-* baseUrl \(string, optional\): All 'url' fields in the 'index' array are resolved with this URL prefixed.
-* interpolate \(boolean, default: false\): If true, baseUrl must be present. Instead of prefixing baseUrl, any occurence of the characters '{}' will be replaced with the contents of the 'url' fields in the 'index' array.
+* baseUrl \(string, optional\): All 'url' fields in the 'index' array are resolved with this URL prefixed. If it contains "{}" (which is invalid in URL), those characters will be replaced with the contents of the 'url' fields in the 'index' array.
 * index \(array\): See [below](#index).
 
 ### Index
