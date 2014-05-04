@@ -11,7 +11,7 @@ JSON file
 
 ## File ending
 
-.json, .quickmod is also allowed, though .json is prefered
+.qm, .quickmod or .json are allowed, .qm is prefered and should be used in most cases
 
 # The fields
 
