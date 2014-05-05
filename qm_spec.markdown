@@ -25,26 +25,24 @@ modId        | string         | maybe\*   | The mod ID of the mod, as used by fo
 name         | string         | yes       | A descriptive, human readable name
 nemName      | string         | no        | The name of the mod in NotEnoughMods
 description  | string         | no        | A description of the mod
-iconUrl      | qmurl\*\*      | no        | A URL to an icon for the mod
-logoUrl      | qmurl\*\*      | no        | A URL to a logo for the mod
-websiteUrl   | qmurl\*\*      | no        | A URL to the mods website
-issuesUrl    | qmurl\*\*      | no        | A URL to an issue tracker for the mod
-donationsUrl | qmurl\*\*      | no        | A URL for leaving donations to the mod
+urls         | objectlist\*\*\* | no      | An object of URLs
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
 verifyUrl    | qmurl\*\*      | no        | This URL should point at a UTF-8 encoded file containing only a SHA512 checksum of this QuickMod file. If that checksum is correct the user will be given a nice message
 tags         | stringlist     | no        | A list of tags that apply to the mod
 categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
-authors      | object\*\*\*   | no        | Authors that have participated in the creation of the mod
-references   | object\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
+authors      | object\*\*\*\* | no        | Authors that have participated in the creation of the mod
+references   | object\*\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
 versions     | array          | yes       | A list of versions, see [here](qm_versions_spec.markdown) for documentation.
 
 \* Only if it's a forge mod
 
 \*\* See _QuickMod URLs_
 
-\*\*\* A string -> stringlist map, where the key is a role of the authors given in the stringlist
+\*\*\* A list of objects, where each object has `type` field and a `url` field. Possible type: website, wiki, forum, donation, issues, source, icon, logo.
 
-\*\*\*\* A string -> qmurl map, where the key is the uid of the referenced mod, and the value should be the same as the updateUrl of that mod
+\*\*\*\* A string -> stringlist map, where the key is a role of the authors given in the stringlist
+
+\*\*\*\*\* A string -> qmurl map, where the key is the uid of the referenced mod, and the value should be the same as the updateUrl of that mod
 
 <a id="qmurl">
 ## QuickMod URLs
@@ -71,11 +69,15 @@ Note: Most URLs etc in the below example won't work
     "name": "Biomes O' Plenty",
     "nemName": "BiomesOPlenty",
     "description": "Biomes O' Plenty is a mod that is designed to give players a better Minecraft world to explore, and more of a reason to explore it in the first place. There are a lot of realistic biomes, some fantasy biomes, and other cool things we've added to the mod.",
-    "iconUrl": "github://Glitchfriend@BiomesOPlenty/icon.png",
-    "logoUrl": "https://raw.github.com/Glitchfriend/BiomesOPlenty/master/logo.png",
-    "websiteUrl": "mcf:1495041",
-    "updateUrl": "github://Glitchfriend@BiomesOPlenty/quickmod.json",
-    "versionsUrl": "github://Glitchfriend@BiomesOPlenty/quickmod.versions.json",
+    "urls": [
+        { "type": "icon", "url": "github://Glitchfiend@BiomesOPlenty/icon.png" },
+        { "type": "logo", "url": "https://raw.github.com/Glitchfiend/BiomesOPlenty/master/logo.png" },
+        { "type": "website", "url": "mcf:1495041" },
+        { "type": "source", "url": "https://github.com/Glitchfiend/BiomesOPlenty" }
+    ],
+    "license": "CC-BY-NC-ND 4.0",
+    "updateUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.json",
+    "versionsUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.versions.json",
     "tags": [ "Biomes" ],
     "categories": [ "Wordgen", "Biomes" ],
     "authors": {
