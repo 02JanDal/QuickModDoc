@@ -25,7 +25,7 @@ modId        | string         | maybe\*   | The mod ID of the mod, as used by fo
 name         | string         | yes       | A descriptive, human readable name
 nemName      | string         | no        | The name of the mod in NotEnoughMods
 description  | string         | no        | A description of the mod
-urls         | objectlist\*\*\* | no      | An object of URLs
+urls         | object\*\*\*   | no      | An object of URL types
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
 verifyUrl    | qmurl\*\*      | no        | This URL should point at a UTF-8 encoded file containing only a SHA512 checksum of this QuickMod file. If that checksum is correct the user will be given a nice message
 tags         | stringlist     | no        | A list of tags that apply to the mod
@@ -38,7 +38,7 @@ versions     | array          | yes       | A list of versions, see [here](qm_ve
 
 \*\* See _QuickMod URLs_
 
-\*\*\* A list of objects, where each object has `type` field and a `url` field. Possible type: website, wiki, forum, donation, issues, source, icon, logo.
+\*\*\* An object with keys being URL types and values being a list of qmurls. Possible types: website, wiki, forum, donation, issues, source, icon, logo.
 
 \*\*\*\* A string -> stringlist map, where the key is a role of the authors given in the stringlist
 
@@ -69,11 +69,11 @@ Note: Most URLs etc in the below example won't work
     "name": "Biomes O' Plenty",
     "nemName": "BiomesOPlenty",
     "description": "Biomes O' Plenty is a mod that is designed to give players a better Minecraft world to explore, and more of a reason to explore it in the first place. There are a lot of realistic biomes, some fantasy biomes, and other cool things we've added to the mod.",
-    "urls": [
-        { "type": "icon", "url": "github://Glitchfiend@BiomesOPlenty/icon.png" },
-        { "type": "logo", "url": "https://raw.github.com/Glitchfiend/BiomesOPlenty/master/logo.png" },
-        { "type": "website", "url": "mcf:1495041" },
-        { "type": "source", "url": "https://github.com/Glitchfiend/BiomesOPlenty" }
+    "urls": {
+        "icon": [ "github://Glitchfiend@BiomesOPlenty/icon.png" ],
+        "logo": [ "https://raw.github.com/Glitchfiend/BiomesOPlenty/master/logo.png" ],
+        "website": [ "mcf:1495041" ],
+        "source": [ "https://github.com/Glitchfiend/BiomesOPlenty" ]
     ],
     "license": "CC-BY-NC-ND 4.0",
     "updateUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.json",
