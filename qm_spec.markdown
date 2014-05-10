@@ -28,7 +28,6 @@ nemName      | string         | no        | The name of the mod in NotEnoughMods
 description  | string         | no        | A description of the mod
 urls         | object\*\*\*   | no      | An object of URL types
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
-verifyUrl    | qmurl\*\*      | no        | This URL should point at a UTF-8 encoded file containing only a SHA512 checksum of this QuickMod file. If that checksum is correct the user will be given a nice message
 tags         | stringlist     | no        | A list of tags that apply to the mod
 categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
 authors      | object\*\*\*\* | no        | Authors that have participated in the creation of the mod
