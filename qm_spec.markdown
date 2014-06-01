@@ -26,7 +26,8 @@ modId        | string         | maybe\*   | The mod ID of the mod, as used by fo
 name         | string         | yes       | A descriptive, human readable name
 nemName      | string         | no        | The name of the mod in NotEnoughMods
 description  | string         | no        | A description of the mod
-urls         | object\*\*\*   | no      | An object of URL types
+license      | string         | no        | The mods license
+urls         | object\*\*\*   | no        | An object of URL types
 updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
 tags         | stringlist     | no        | A list of tags that apply to the mod
 categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
@@ -77,7 +78,6 @@ Note: Most URLs etc in the below example won't work
     ],
     "license": "CC-BY-NC-ND 4.0",
     "updateUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.json",
-    "versionsUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.versions.json",
     "tags": [ "Biomes" ],
     "categories": [ "Wordgen", "Biomes" ],
     "authors": {
