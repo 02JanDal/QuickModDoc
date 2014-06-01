@@ -95,9 +95,13 @@ Note: Most URLs etc in the below example won't work
                 "codechicken.ForgeMultipart": "[1.0.0.228,)"
             },
             "name": "1.2.1.434",
-            "downloadType": "sequential",
             "installType": "forgeMod",
-            "url": "http://adf.ly/391097/http://files.minecraftforge.net/BiomesOPlenty/BiomesOPlenty-universal-1.6.4-1.2.1.434.jar"
+            "urls": [
+                {
+                    "url": "http://adf.ly/391097/http://files.minecraftforge.net/BiomesOPlenty/BiomesOPlenty-universal-1.6.4-1.2.1.434.jar",
+                    "downloadType": "sequential"
+                }
+            ]
         }
     ]
 }
