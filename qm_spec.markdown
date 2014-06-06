@@ -34,6 +34,7 @@ categories   | stringlist     | no        | A list of categories that apply to t
 authors      | object\*\*\*\* | no        | Authors that have participated in the creation of the mod
 references   | object\*\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
 versions     | array          | yes       | A list of versions, see [here](qm_versions_spec.markdown) for documentation.
+mavenRepos   | stringlist     | no        | A list of maven base urls to search for if a downloadType is maven, or for maven dependencies
 
 \* Only if it's a forge mod
 

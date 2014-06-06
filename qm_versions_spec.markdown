@@ -16,7 +16,7 @@ name | string | yes | A name for this version. See [below](#note_versions)
 type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
 downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
-md5 | string | no | The checksum of the downloaded file
+sha1 | string | no | The checksum of the downloaded file
 urls | objectlist\*\*\* | yes | A list of possible urls (mirrors)
 libraries | objectlist\*\*\*\* | no | A list of libraries required by the mod version
 
@@ -26,7 +26,7 @@ libraries | objectlist\*\*\*\* | no | A list of libraries required by the mod ve
 
 \*\*\* Object with the fields 'url', 'downloadType', 'priority', 'hint' and 'group'. 'url' is the URL (can be encoded, see below), 'downloadType' is an enum, see below for possible values, 'priority' is for selecting of mirror and 'hint' and 'group' are related to encoding, see below.
 
-\*\*\*\* an array of objects, where each object has the fields 'name' and 'url'. The 'name' should be in the format `<group>:<artifact>:<version>`, 'url' can either be a maven base URL (has to end with a forward slash), an absolute URL (cannot end with a forward slash) or be empty or not existing (uses the maven central repository)
+\*\*\*\* an array of objects, where each object has the fields 'name' and (optionally) 'url'. The 'name' should be in the format `<group>:<artifact>:<version>`, 'url' is optional, if supplied it should be an absolute URL, if not the maven repositories supplied in the root object are searched.
 
 <a id="downloadtype">
 ## Download Type
@@ -40,6 +40,7 @@ direct | Don't display a browser, just download the URL directly
 parallel | Loaded at the same time as all other`parallel` URLs
 sequential | Loaded one-by-one, needed by adfly or similar URLs
 encoded | See below
+maven | The URL is a maven identifier, that's searched for in maven central and the repositories given in the root object.
 
 `parallel`is the default.
 
