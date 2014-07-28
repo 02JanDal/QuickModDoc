@@ -14,7 +14,6 @@ forgeCompat | interval\* | no | An interval of all forge versions supported
 references | objectlist\*\* | no | A list of all dependencies, conflicts etc. etc.
 name | string | yes | A name for this version. See [below](#note_versions)
 type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
-downloadType | enum | no | See [below](#downloadtype)
 installType | enum | no | See [below](#installtype)
 sha1 | string | no | The checksum of the downloaded file
 urls | objectlist\*\*\* | yes | A list of possible urls (mirrors)
