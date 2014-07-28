@@ -22,7 +22,7 @@ libraries | objectlist\*\*\*\* | no | A list of libraries required by the mod ve
 
 \* Interval notation, see [wikipedia](http://en.wikipedia.org/wiki/Interval_%28mathematics%29#Notations_for_intervals). Leave _a_ or _b_ empty for infinity
 
-\*\* an array of objects, where each object has the fields 'uid', 'type' and 'version'. Type can be any of 'depends', 'recommends', 'suggests', 'conflicts', 'provides', and version can be either empty or a version interval.
+\*\* an array of objects, where each object has the fields 'uid', 'type', 'version' and 'isSoft'. Type can be any of 'depends', 'recommends', 'suggests', 'conflicts', 'provides', and version can be either empty or a version interval. If 'isSoft' is true (default is false) and the 'type' is 'depends' this mod will not be removed when the referenced mod is removed.
 
 \*\*\* Object with the fields 'url', 'downloadType', 'priority', 'hint' and 'group'. 'url' is the URL (can be encoded, see below), 'downloadType' is an enum, see below for possible values, 'priority' is for selecting of mirror and 'hint' and 'group' are related to encoding, see below.
 
