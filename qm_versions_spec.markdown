@@ -11,6 +11,7 @@ Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
 mcCompat | stringlist | yes | A list of all Minecraft versions supported by this version
 forgeCompat | interval\* | no | An interval of all forge versions supported
+liteloaderCompat | interval\* | no | An interval of all liteloader versions supported
 references | objectlist\*\* | no | A list of all dependencies, conflicts etc. etc.
 name | string | yes | A name for this version. See [below](#note_versions)
 type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
@@ -57,8 +58,9 @@ Possible values of the`installType`field:
 
 Value | Description
 ----- | -----------
-forgeMod | Put into`<minecraft>/mods/`
+forgeMod | Load using classpath
 forgeCoreMod | Put into`<minecraft>/coremods/`
+liteloaderMod | Save with .litemod extension and load by giving to LiteLoader using a CLI argument
 extract | Extract at`<minecraft>`
 configPack | Extract at`<minecraft>/configs`
 group | Don't download or install anything, except dependencies.
