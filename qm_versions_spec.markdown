@@ -14,6 +14,7 @@ forgeCompat | interval\* | no | An interval of all forge versions supported
 liteloaderCompat | interval\* | no | An interval of all liteloader versions supported
 references | objectlist\*\* | no | A list of all dependencies, conflicts etc. etc.
 name | string | yes | A name for this version. See [below](#note_versions)
+version | string | no | This can be used if you use a versioning scheme not compatible with semantic versioning. Set `name` to "your" version and `version` to a semantic version compatible value
 type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
 installType | enum | no | See [below](#installtype)
 sha1 | string | no | The checksum of the downloaded file
