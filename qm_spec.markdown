@@ -20,7 +20,7 @@ Here's a listing of all fields currently defined
 Name         | Type           | Required? | Description 
 ------------ | -------------- |:---------:| ------------
 formatVersion | int           | yes       | The version of the QuickMod format. Currently 1.
-uid          | string         | yes       | A java package style id of the QuickMod. Has to be globally unique for the QuickMod, and should NEVER change. <author>.<modid> is a good uid, but remember it may never change as long as it's still the same mod!
+uid          | string         | yes       | A java package style id of the QuickMod. Has to be globally unique for the QuickMod, and should NEVER change. `<author>.<modid>` is a good uid, but remember it may never change as long as it's still the same mod!
 repo         | string         | yes       | A java package style repository id of the QuickMod. Has to be globally unique for your repository, and NEVER change. Two QuickMods with the same uid and repo are considered exactly equal and will overwrite each other.
 modId        | string         | maybe\*   | The mod ID of the mod, as used by forge mods. It's the name (as used in the 'name' field in the .json file) if it's a LiteLoader mod.
 name         | string         | yes       | A descriptive, human readable name
