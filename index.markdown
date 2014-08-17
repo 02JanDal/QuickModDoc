@@ -11,9 +11,7 @@ A QuickMod file is a JSON file that contains metadata about a mod for the sandbo
 
 These QuickMod files can be given to a Minecraft launcher, for example MultiMC 5, and that launcher will then resolve any dependencies the mod has, download it and put in the right place. Using the different metadata the launcher can also allow you to search or browse for mods.
 
-## But I want the users to go through adf.ly/other similar site!
-
-No problem, all download links are displayed in a browser and then caught once the file download is started
+The QuickMod spec also allows for download links to require user interaction, which allows them to be adf.ly links. Remember that it's a lot more convenient for users if they don't have to do anything though.
 
 ## How does it work?
 
