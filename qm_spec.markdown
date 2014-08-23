@@ -70,13 +70,14 @@ Note: Most URLs etc in the below example won't work
     "modId": "BiomesOPlenty",
     "name": "Biomes O' Plenty",
     "nemName": "BiomesOPlenty",
+    "repo": "github.glitchfiend",
     "description": "Biomes O' Plenty is a mod that is designed to give players a better Minecraft world to explore, and more of a reason to explore it in the first place. There are a lot of realistic biomes, some fantasy biomes, and other cool things we've added to the mod.",
     "urls": {
         "icon": [ "github://Glitchfiend@BiomesOPlenty/icon.png" ],
         "logo": [ "https://raw.github.com/Glitchfiend/BiomesOPlenty/master/logo.png" ],
         "website": [ "mcf:1495041" ],
         "source": [ "https://github.com/Glitchfiend/BiomesOPlenty" ]
-    ],
+    },
     "license": "CC-BY-NC-ND 4.0",
     "updateUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.json",
     "tags": [ "Biomes" ],
