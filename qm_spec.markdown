@@ -93,9 +93,15 @@ Note: Most URLs etc in the below example won't work
     "versions": [
         {
             "mcCompat": [ "1.6.4" ],
-            "depends": {
-                "codechicken.ForgeMultipart": "[1.0.0.228,)"
-            },
+            "references": [
+                {
+                    "uid": "codechicken.ForgeMultipart",
+                    "version": "[1.0.0.228,)",
+                    "type": "depends"
+                }                    
+            ],
+            "sha1": "143be69351467fa7ddceaf23ee018b816ef2e702",
+            "type": "Alpha",
             "name": "1.2.1.434",
             "installType": "forgeMod",
             "urls": [
