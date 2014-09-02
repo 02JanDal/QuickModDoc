@@ -17,48 +17,30 @@ JSON file
 
 Here's a listing of all fields currently defined
 
-Name         | Type           | Required? | Description 
------------- | -------------- |:---------:| ------------
-formatVersion | int           | yes       | The version of the QuickMod format. Currently 1.
-uid          | string         | yes       | A java package style id of the QuickMod. Has to be globally unique for the QuickMod, and should NEVER change. `<author>.<modid>` is a good uid, but remember it may never change as long as it's still the same mod!
-repo         | string         | yes       | A java package style repository id of the QuickMod. Has to be globally unique for your repository, and NEVER change. Two QuickMods with the same uid and repo are considered exactly equal and will overwrite each other.
-modId        | string         | maybe\*   | The mod ID of the mod, as used by forge mods. It's the name (as used in the 'name' field in the .json file) if it's a LiteLoader mod.
-name         | string         | yes       | A descriptive, human readable name
-nemName      | string         | no        | The name of the mod in NotEnoughMods
-description  | string         | no        | A description of the mod
-license      | string         | no        | The mods license
-urls         | object\*\*\*   | no        | An object of URL types
-updateUrl    | qmurl\*\*      | yes       | This URL should point at the QuickMod file, and is used for updating it
-tags         | stringlist     | no        | A list of tags that apply to the mod
-categories   | stringlist     | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
-authors      | object\*\*\*\* | no        | Authors that have participated in the creation of the mod
-references   | object\*\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
-versions     | array          | yes       | A list of versions, see [here](qm_versions_spec.markdown) for documentation.
-mavenRepos   | stringlist     | no        | A list of maven base urls to search for if a downloadType is maven, or for maven dependencies
+Name          | Type           | Required? | Description
+------------- | -------------- |:---------:| ------------
+formatVersion | int            | yes       | The version of the QuickMod format. Currently 1.
+updateUrl     | string         | yes       | This URL should point at itself, and is used for updating it
+uid           | string         | yes       | A java package style id of the QuickMod. Has to be globally unique to the QuickMod, and should __never__ change. `<author>.<modid>` is a good UID, but remember it may never change as long as it's still the same mod!
+repo          | string         | yes       | A java package style repository id of the QuickMod. Has to be globally unique to your repository, and __never__ change. Two QuickMods with the same UID and repo are considered exactly equal and will overwrite each other.
+versions      | version list   | yes       | A list of [versions](qm_versions_spec.html)
+name          | string         | yes       | A descriptive, human readable name
+modId         | string         | maybe\*   | The mod ID of the mod, as used by forge mods. It's the name (as used in the 'name' field in the .json file) if it's a LiteLoader mod.
+description   | string         | no        | A description of the mod
+license       | string         | no        | The mods license
+urls          | object\*\*     | no        | An object of URL types
+tags          | string list    | no        | A list of tags that apply to the mod
+categories    | string list    | no        | A list of categories that apply to the mod. Tags and categories might often be more or less the same.
+authors       | object\*\*\*   | no        | Authors that have participated in the creation of the mod
+references    | object\*\*\*\* | no        | A list of all mods that are in some way referenced in the versions file
 
-\* Only if it's a forge or liteloader mod
+\* Required for forge and liteloader mods
 
-\*\* See _QuickMod URLs_
+\*\* A type -> URL list map. Types include 'website', 'wiki', 'forum', 'donation', 'issues', 'source', 'icon', and 'logo'. URLs are strings.
 
-\*\*\* An object with keys being URL types and values being a list of qmurls. Possible types: website, wiki, forum, donation, issues, source, icon, logo.
+\*\*\* A role -> author list map. Roles and authors are strings.
 
-\*\*\*\* A string -> stringlist map, where the key is a role of the authors given in the stringlist
-
-\*\*\*\*\* A string -> qmurl map, where the key is the uid of the referenced mod, and the value should be the same as the updateUrl of that mod
-
-<a id="qmurl">
-## QuickMod URLs
-</a>
-All URLs that are referencing something 'inside' the QuickMod system, like other QuickMod files, version files etc. can make use of a few additional schemes (a part from the standard http, https etc.).
-These mostly exist for convenience and to reduce bandwidth usage.
-
-### github://&lt;user&gt;@&lt;repo&gt;/&lt;filename&gt;[#&lt;branch&gt;]
-
-Expands to https://raw.github.com/&lt;user&gt;/&lt;repo&gt;/&lt;branch&gt;/&lt;filename&gt; (default branch is master)
-
-### mcf:&lt;topic-id&gt;
-
-Expands to http://www.minecraftforum.net/topic/&lt;topic-id&gt;-
+\*\*\*\* A UID -> URL map. The URL value should be the same as the updateUrl of that mod. UIDs and URLs are strings.
 
 ## Example
 
@@ -69,17 +51,16 @@ Note: Most URLs etc in the below example won't work
     "uid": "biomesoplenty.BiomesOPlenty",
     "modId": "BiomesOPlenty",
     "name": "Biomes O' Plenty",
-    "nemName": "BiomesOPlenty",
     "repo": "github.glitchfiend",
     "description": "Biomes O' Plenty is a mod that is designed to give players a better Minecraft world to explore, and more of a reason to explore it in the first place. There are a lot of realistic biomes, some fantasy biomes, and other cool things we've added to the mod.",
     "urls": {
-        "icon": [ "github://Glitchfiend@BiomesOPlenty/icon.png" ],
+        "icon": [ "https://rawgit.com/Glitchfiend/BiomesOPlenty/master/icon.png" ],
         "logo": [ "https://raw.github.com/Glitchfiend/BiomesOPlenty/master/logo.png" ],
-        "website": [ "mcf:1495041" ],
+        "website": [ "http://www.minecraftforum.net/topic/1495041-" ],
         "source": [ "https://github.com/Glitchfiend/BiomesOPlenty" ]
     },
     "license": "CC-BY-NC-ND 4.0",
-    "updateUrl": "github://Glitchfiend@BiomesOPlenty/quickmod.json",
+    "updateUrl": "https://rawgit.com/Glitchfiend/BiomesOPlenty/master/quickmod.json",
     "tags": [ "Biomes" ],
     "categories": [ "Wordgen", "Biomes" ],
     "authors": {
@@ -88,7 +69,7 @@ Note: Most URLs etc in the below example won't work
         "Credits": [ "gamax92", "enchilado", "Tim Rurkowski", "Soaryn", "MineModder2000" ]
     },
     "references": {
-        "codechicken.ForgeMultipart": "github://Chicken-Bones@ForgeMultipart/FMP.json"
+        "codechicken.ForgeMultipart": "https://rawgit.com/Chicken-Bones/ForgeMultipart/master/FMP.json"
     },
     "versions": [
         {
@@ -98,7 +79,7 @@ Note: Most URLs etc in the below example won't work
                     "uid": "codechicken.ForgeMultipart",
                     "version": "[1.0.0.228,)",
                     "type": "depends"
-                }                    
+                }
             ],
             "sha1": "143be69351467fa7ddceaf23ee018b816ef2e702",
             "type": "Alpha",
