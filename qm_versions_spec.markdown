@@ -61,7 +61,6 @@ forgeMod | Load using classpath
 forgeCoreMod | Put into`<minecraft>/coremods/`
 liteloaderMod | Save with .litemod extension and load by giving to LiteLoader using a CLI argument
 extract | Extract at`<minecraft>`
-configPack | Extract at`<minecraft>/configs`
 group | Don't download or install anything, except dependencies.
 
 `forgeMod`is the default.
