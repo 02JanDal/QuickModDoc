@@ -42,6 +42,18 @@ references    | object\*\*\*\* | no        | A list of all mods that are in some
 
 \*\*\*\* A UID -> URL map. The URL value should be the same as the updateUrl of that mod. UIDs and URLs are strings.
 
+## Reserved UIDs
+
+In order to reduce the amount of fields, several UIDs are reserved and should be special cased by implementations. These include:
+
+* `net.minecraftforge` - The supported version(s) of Forge
+* `com.mumfrey.liteloader` - The supported version(s) of LiteLoader
+* `net.minecraft` - The supported version(s) of Minecraft
+
+These can be used for example as dependencies, but they do not need to be added to the root `references` object.
+
+These also replace the old `mcCompat`, `forgeCompat` and `liteloaderCompat` fields.
+
 ## Example
 
 Note: Most URLs etc in the below example won't work
@@ -73,11 +85,15 @@ Note: Most URLs etc in the below example won't work
     },
     "versions": [
         {
-            "mcCompat": [ "1.6.4" ],
             "references": [
                 {
                     "uid": "codechicken.ForgeMultipart",
                     "version": "[1.0.0.228,)",
+                    "type": "depends"
+                },
+                {
+                    "uid": "net.minecraft",
+                    "version": "1.6.4",
                     "type": "depends"
                 }
             ],

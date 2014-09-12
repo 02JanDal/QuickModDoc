@@ -9,12 +9,9 @@ The QuickMod Version objects can contain the following fields:
 
 Name | Type | Required? | Description
 ---- | ---- | --------- | -----------
-mcCompat | string list | yes | A list of all Minecraft versions supported by this version
 urls | object\*\* list | yes | A list of possible URLs (mirrors)
 version | string | yes | A name for this version. See [below](#note_versions)
 name | string | no | This can be used if you use a versioning scheme not compatible with the one outlined below. Set `name` to "your" version and `version` to a value compatible with QuickMod versions
-forgeCompat | [interval](#interval) | no | An interval of all forge versions supported
-liteloaderCompat | [interval](#interval) | no | An interval of all liteloader versions supported
 references | object\* list | no | A list of all dependencies, conflicts etc. etc.
 type | string | no | A type of the version, for example Release, Dev, Alpha or Beta.
 installType | enum | no | See [below](#installtype)
