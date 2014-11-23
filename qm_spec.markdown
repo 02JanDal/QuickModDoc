@@ -100,6 +100,7 @@ Note: Most URLs etc in the below example won't work
             "sha1": "143be69351467fa7ddceaf23ee018b816ef2e702",
             "type": "Alpha",
             "name": "1.2.1.434",
+            "version": "1.2.1.434",
             "installType": "forgeMod",
             "urls": [
                 {
